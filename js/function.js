@@ -86,14 +86,14 @@ function validateRegister(name, surname, age, email, username ,password, repassw
 
     if (!username.value && username.value.trim().length < 4) {
         alert('Username ni togri kiriting');
-        Username.focus();
+        username.focus();
         return false;
     }
 
 
     if (password.value.trim().length < 4) {
         alert('Password ni togri kiriting');
-        Password.focus();
+        password.focus();
         return false;
 
     }

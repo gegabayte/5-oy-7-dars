@@ -32,3 +32,13 @@ button && button.addEventListener('click', function (e) {
     }
 })
 
+sun && sun.addEventListener('click', function() {
+    sun.style.cursor = 'pointer'
+    form.style.backgroundColor = 'black'
+})
+
+moon && moon.addEventListener('click', function() {
+    sun.style.cursor = 'pointer'
+    form.style.backgroundColor = 'white'  
+})
+

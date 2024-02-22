@@ -7,8 +7,10 @@ const email = document.getElementById('email');
 const username = document.getElementById('Username');
 const password = document.getElementById('password');
 const repassword = document.getElementById('repassword');
+const L = document.querySelectorAll('.form-label')
 const form = document.getElementById('form');
-
+const sun = document.getElementById('sun');
+const moon = document.getElementById('moon');
 
 button && button.addEventListener('click', function(e){
     e.preventDefault();
@@ -31,5 +33,15 @@ button && button.addEventListener('click', function(e){
         let beseUrl = window.location.href.substring(0, index)
         window.location.assign(`${beseUrl}pages/login.html`);
     }
+})
+
+sun && sun.addEventListener('click', function() {
+    sun.style.cursor = 'pointer'
+    form.style.backgroundColor = 'white'
+})
+
+moon && moon.addEventListener('click', function() {
+    sun.style.cursor = 'pointer'
+    form.style.backgroundColor = 'black'
 })
 
