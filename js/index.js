@@ -1,4 +1,4 @@
-import { getData } from "./function";
+import { getData } from "./function.js";
 
 const name = document.getElementById('name');
 const surname = document.getElementById('surname');
@@ -6,7 +6,9 @@ const age = document.getElementById('age');
 const email = document.getElementById('email');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
-const logout = document.getElementById('password');
+const logout = document.getElementById('logout');
+
+console.log(logout);
 
 let fullUrl = window.location.href;
 let index = fullUrl.search('index');
