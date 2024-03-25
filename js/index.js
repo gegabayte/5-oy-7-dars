@@ -10,11 +10,10 @@ const logout = document.getElementById('logout');
 
 console.log(logout);
 
-let fullUrl = window.location.href;
-let index = fullUrl.search('index');
-let beseUrl = fullUrl.substring(0, index);
 
-document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener('DOMContentLoaded', function (e) {
+    e.preventDefault();
     let users = getData();
     let activeUser = localStorage.getItem(`${beseUrl}/pages/login.html`);
 
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.assign(`${beseUrl}/pages/login.html`);
         }
     } else {
-        window.location.assign(`${beseUrl}/pages/login.html`);
+        // window.location.assign(`${beseUrl}/pages/login.html`);
     }
 
 
@@ -41,6 +40,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 logout && logout.addEventListener('click', function() {
-    localStorage.removeItem('activeUser');
     window.location.assign(`${beseUrl}/pages/login.html`);
 })
