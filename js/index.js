@@ -8,12 +8,13 @@ const username = document.getElementById('username');
 const password = document.getElementById('password');
 const logout = document.getElementById('logout');
 
-console.log(logout);
-
-
 
 document.addEventListener('DOMContentLoaded', function (e) {
+
     e.preventDefault();
+    let fullUrl = window.location.href;
+    let index = fullUrl.search('pages');
+    let beseUrl = fullUrl.substring(0, index);
     let users = getData();
     let activeUser = localStorage.getItem(`${beseUrl}/pages/login.html`);
 
@@ -22,17 +23,17 @@ document.addEventListener('DOMContentLoaded', function (e) {
             return el.username == activeUser;
         })
         if (user) {
-            name.innerHTML = user.name;
-            surname.innerHTML = surname.name;
-            age.innerHTML = age.name;
-            email.innerHTML = email.name;
-            username.innerHTML = username.name;
-            password.innerHTML = password.name;
+            name.innerHTML = user;
+            surname.innerHTML = surname;
+            age.innerHTML = age;
+            email.innerHTML = email;
+            username.innerHTML = username;
+            password.innerHTML = password;
         } else {
             window.location.assign(`${beseUrl}/pages/login.html`);
         }
     } else {
-        // window.location.assign(`${beseUrl}/pages/login.html`);
+        // window.location.assign(`${beseUrl}/pages/register.html`);
     }
 
 
@@ -40,5 +41,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
 
 logout && logout.addEventListener('click', function() {
-    window.location.assign(`${beseUrl}/pages/login.html`);
+    let fullUrl = window.location.href;
+    let index = fullUrl.search('pages');
+    let beseUrl = fullUrl.substring(0, index);
+    window.location.assign(`${beseUrl}/pages/register.html`);
 })

@@ -26,7 +26,8 @@ button && button.addEventListener('click', function (e) {
             window.location.assign(`${beseUrl}/index.html`)
 
         } else {
-            error.classList = 'd-block text-danger';
+            error.style.color = 'red'
+            error.style.marginTop = '20px'
             error.innerHTML = 'Parol yoki Username notogri kiritildi';
         }
     }
